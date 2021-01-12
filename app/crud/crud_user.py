@@ -24,7 +24,7 @@ class CRUDUser(CRUDBase[User, UserCreate, UserUpdate]):
             password=get_password_hash(obj_in.password),
             std_no=obj_in.std_no,
             name=obj_in.name,
-            gender=obj_in.gender,
+            gender=obj_in.gender.value,
             profile_image=obj_in.profile_image,
         )
         db.add(db_obj)

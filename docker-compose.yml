@@ -1,4 +1,3 @@
-
 version: "3.7" # 파일 규격 버전
 services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의 ( 컴포즈에서 컨테이너 : 서비스 )
   db: # 서비스 명
@@ -11,18 +10,16 @@ services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의 ( 컴�
       - MYSQL_DATABASE_NAME=madi
       - MYSQL_USER=root
       - MYSQL_PASSWORD=0128gksqls
-      - MYSQL_ROOT_PASSWORD=0128gksqls
+      - MYSQL_ROOT_PASSWORD=''
       - MYSQL_ALLOW_EMPTY_PASSWORD=0128gksqls
       - MYSQL_RANDOM_ROOT_PASSWORD=0128gksqls
     command: # 명령어 실행
       - --lower_case_table_names=1
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
-    volumes:
-      - /Users/Shared/data/mysql-test:/var/lib/mysql # -v 옵션 (다렉토리 마운트 설정)
 
   web:
-    image: gksqls0128/madi_server:0.3 # 사용할 이미지
+    image: gksqls0128/madi_server:0.10 # 사용할 이미지
     container_name: madi-webserver # 컨테이너 이름 설정
     depends_on:
       - db
