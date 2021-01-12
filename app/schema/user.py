@@ -7,9 +7,9 @@ DEFAULT_PROFILE_IMAGE = ""
 
 
 class Gender(Enum):
-    male = 1
-    female = 2
-    none = 3
+    male = "male"
+    female = "female"
+    none = "none"
 
 
 # User의 공유 속성
